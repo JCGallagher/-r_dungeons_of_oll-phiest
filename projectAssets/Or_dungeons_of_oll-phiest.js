@@ -4,24 +4,20 @@ var mainState = {
     preload: function() {
         
         // load graphics
-        game.load.image('player', 'projectAssets/player.png');
-        game.load.image('block', 'assets/block.png');
-        game.load.image('baddy', 'assets/baddy.png');
-        game.load.image('key', 'assets/key.png');
-        game.load.image('door', 'assets/door.png');
-        game.load.image('coin', 'assets/coin.png');
+        game.load.image('player', 'Assets/dwarf_sprite_sheet.fw.png');
+        game.load.image('coin', 'Assets/coin.png');
         
         // load audio
-        game.load.audio('pickup', 'assets/pickup.wav');
-        game.load.audio('win', 'assets/win.wav');
+        game.load.audio('pickup', 'Assets/pickup.wav');
+        game.load.audio('win', 'Assets/win.wav');
         
         // load tilemap
         game.load.spritesheet('tileset', 
-                              'assets/tileset.png', 
+                              'Assets/tileset.png', 
                               50, 
                               50);
         game.load.tilemap('map1', 
-                          'Ȯr dungeons of oll-phiest.json', 
+                          'Assets/Or_dungeons_of_oll-phiest.json', 
                           null, 
                           Phaser.Tilemap.TILED_JSON);
     
@@ -53,14 +49,17 @@ var mainState = {
         
         
         // Light and shadow
+        /*
         this.shadowTexture = game.add.bitmapData(game.width, game.height);
         var lightSprite = game.add.image(0,0,this.shadowTexture);
         lightSprite.fixedToCamera = true;
         lightSprite.blendMode = Phaser.blendModes.MULTIPLY;
+        */
     },
     
     // Update called every frame thereafter
     update: function () {
+        /*
         this.movePlayer();
         //this.moveBaddy();
         this.countDown();
@@ -83,9 +82,11 @@ var mainState = {
                                     x: player.x + player.width/2 - game.camera.x, 
                                     y: player.y + player.height/2 - game.camera.y },
                                 100 )
+                                */
     },
     
     movePlayer: function() {
+        /*
         if (cursors.left.isDown) {
             player.body.velocity.x=-200;        
         } else if (cursors.right.isDown) {
@@ -110,6 +111,7 @@ var mainState = {
         {
             player.animations.play('stand');
         }
+        */
     },
     
     // Maze building function - creates a maze based on a file
@@ -120,7 +122,7 @@ var mainState = {
         // Add the tileset to the map
         this.map.addTilesetImage('tileset');
         // Create the layer, by specifying the name of the Tiled layer
-        this.layer = this.map.createLayer('maze');
+        this.layer = this.map.createLayer('maze/background');
         // Set the world size to match the size of the layer
         this.layer.resizeWorld();
         // Enable collisions with the first element of our tileset (the wall)
@@ -133,7 +135,7 @@ var mainState = {
         this.items = game.add.physicsGroup();
         
         // create key
-        this.map.createFromObjects('Objects', 'key', 'tileset', 4, true, false, this.items);
+        this.map.createFromObjects('collectables', 'key', 'tileset', 4, true, false, this.items);
         key = this.items.getByName('key');
         game.physics.arcade.enable(key);
         //key.collectionSound = game.add.audio('pickup');
@@ -155,7 +157,7 @@ var mainState = {
         this.currency = game.add.physicsGroup();
         
         // Load the coins from the tilemap
-        this.map.createFromObjects('Objects', 'coin', 'coin', 0, true, false, this.currency);
+        //this.map.createFromObjects('collectables', 'coin', 'coin', 0, true, false, this.currency);
         
         // Grow and Shrink the Key Using Tween
         var keyTween = game.add.tween(key.scale);
@@ -172,6 +174,7 @@ var mainState = {
         
         
         //create player
+        /*
         var players = game.add.physicsGroup();
         this.map.createFromObjects('Objects', 'player', 'tileset', 1, true, false, players);
         player = players.getFirstExists();
@@ -180,20 +183,20 @@ var mainState = {
         player.animations.add('run', [1, 5], 10, true);
         player.animations.add('stand', [1], 10, true);
         player.animations.play('stand');
-        
+        */
         //create door
         var doors = game.add.physicsGroup();
         this.map.createFromObjects('Objects', 'door', 'tileset', 3, true, false, doors);
-        door = doors.getFirstExists();
-        game.physics.arcade.enable(door);
         
         // create baddies
+        /*
         baddies = game.add.physicsGroup();
         this.map.createFromObjects('Objects', 'enemy', 'tileset', 2, true, false, baddies);
         baddies.forEach(function(enemy){
             enemy.animations.add('run', [2, 6], 10, true);
             enemy.animations.play('run');
         });
+        */
         
     }, // end buildMazeFromFile() 
     
