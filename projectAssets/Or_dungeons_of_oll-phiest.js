@@ -49,44 +49,44 @@ var mainState = {
         
         
         // Light and shadow
-        /*
+        
         this.shadowTexture = game.add.bitmapData(game.width, game.height);
         var lightSprite = game.add.image(0,0,this.shadowTexture);
         lightSprite.fixedToCamera = true;
         lightSprite.blendMode = Phaser.blendModes.MULTIPLY;
-        */
+        
     },
     
     // Update called every frame thereafter
     update: function () {
-        /*
+        
         this.movePlayer();
         //this.moveBaddy();
-        this.countDown();
+        //this.countDown();
         
         game.physics.arcade.collide(player,this.layer);
         game.physics.arcade.collide(baddies,this.layer);
         game.physics.arcade.overlap(player,this.items, 
                                     this.collectItem, 
                                     null, this);
-        game.physics.arcade.overlap(player, door, 
+        game.physics.arcade.overlap(player, doors, 
                                     this.winGame, 
                                     null, this);
         game.physics.arcade.overlap(player, baddies, 
                                     this.endGame, 
                                     null, this);
         
-        // Update the Shadow
-        // You can change the radius (100) to be larger or smaller
+        //Update the Shadow
+        //You can change the radius (100) to be larger or smaller
         this.updateShadowTexture( { 
                                     x: player.x + player.width/2 - game.camera.x, 
                                     y: player.y + player.height/2 - game.camera.y },
                                 100 )
-                                */
+                                
     },
     
     movePlayer: function() {
-        /*
+
         if (cursors.left.isDown) {
             player.body.velocity.x=-200;        
         } else if (cursors.right.isDown) {
@@ -111,7 +111,6 @@ var mainState = {
         {
             player.animations.play('stand');
         }
-        */
     },
     
     // Maze building function - creates a maze based on a file
@@ -128,17 +127,12 @@ var mainState = {
         // Enable collisions with the first element of our tileset (the wall)
         this.map.setCollision(1);
         
-        // Item System
-        // Create an array to hold our current items (held items)
-        this.inventory = [];
-        // Create a group to hold items in the game world
-        this.items = game.add.physicsGroup();
-        
         // create key
+        this.items = game.add.physicsGroup();
         this.map.createFromObjects('collectables', 'key', 'tileset', 4, true, false, this.items);
         key = this.items.getByName('key');
         game.physics.arcade.enable(key);
-        //key.collectionSound = game.add.audio('pickup');
+        key.collectionSound = game.add.audio('pickup');
         
         
         // Add more items here
@@ -174,7 +168,6 @@ var mainState = {
         
         
         //create player
-        /*
         var players = game.add.physicsGroup();
         this.map.createFromObjects('Objects', 'player', 'tileset', 1, true, false, players);
         player = players.getFirstExists();
@@ -183,20 +176,20 @@ var mainState = {
         player.animations.add('run', [1, 5], 10, true);
         player.animations.add('stand', [1], 10, true);
         player.animations.play('stand');
-        */
+
         //create door
-        var doors = game.add.physicsGroup();
-        this.map.createFromObjects('Objects', 'door', 'tileset', 3, true, false, doors);
+        doors = game.add.physicsGroup();
+        this.map.createFromObjects('Objects', 'wdenDoor', 'tileset', 3, true, false, doors);
         
         // create baddies
-        /*
+
         baddies = game.add.physicsGroup();
         this.map.createFromObjects('Objects', 'enemy', 'tileset', 2, true, false, baddies);
         baddies.forEach(function(enemy){
             enemy.animations.add('run', [2, 6], 10, true);
             enemy.animations.play('run');
         });
-        */
+    
         
     }, // end buildMazeFromFile() 
     

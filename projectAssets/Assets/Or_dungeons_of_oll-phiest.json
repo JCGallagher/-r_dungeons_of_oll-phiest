@@ -109,7 +109,7 @@
                  "type":"",
                  "visible":true,
                  "width":50,
-                 "x":154.69696969697,
+                 "x":148.636363636364,
                  "y":353.242424242424
                 }, 
                 {
@@ -183,6 +183,90 @@
                  "width":50,
                  "x":350.69696969697,
                  "y":503.787878787879
+                }, 
+                {
+                 "gid":2,
+                 "height":50,
+                 "id":21,
+                 "name":"player",
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":50,
+                 "x":116.333333333333,
+                 "y":1617
+                }, 
+                {
+                 "gid":3,
+                 "height":50,
+                 "id":22,
+                 "name":"baddy",
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":50,
+                 "x":804.333333333333,
+                 "y":1525
+                }, 
+                {
+                 "gid":3,
+                 "height":50,
+                 "id":23,
+                 "name":"baddy",
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":50,
+                 "x":149.666666666667,
+                 "y":1073
+                }, 
+                {
+                 "gid":3,
+                 "height":50,
+                 "id":24,
+                 "name":"baddy",
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":50,
+                 "x":1292.33333333333,
+                 "y":250.333333333333
+                }, 
+                {
+                 "gid":3,
+                 "height":50,
+                 "id":25,
+                 "name":"baddy",
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":50,
+                 "x":297.666666666667,
+                 "y":194.333333333333
+                }, 
+                {
+                 "gid":3,
+                 "height":50,
+                 "id":26,
+                 "name":"baddy",
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":50,
+                 "x":401.666666666667,
+                 "y":301
+                }, 
+                {
+                 "gid":3,
+                 "height":50,
+                 "id":27,
+                 "name":"baddy",
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":50,
+                 "x":998,
+                 "y":299
                 }],
          "opacity":1,
          "type":"objectgroup",
@@ -215,7 +299,7 @@
                  "type":"",
                  "visible":true,
                  "width":50,
-                 "x":99.2424242424243,
+                 "x":101.242424242424,
                  "y":552.272727272727
                 }, 
                 {
@@ -236,7 +320,7 @@
          "x":0,
          "y":0
         }],
- "nextobjectid":21,
+ "nextobjectid":28,
  "orientation":"orthogonal",
  "renderorder":"right-down",
  "tiledversion":"2018.02.14",
