@@ -127,6 +127,12 @@ var mainState = {
         // Enable collisions with the first element of our tileset (the wall)
         this.map.setCollision(1);
         
+        // Item System
+        // Create an array to hold our current items (held items)
+        this.inventory = [];
+        // Create a group to hold items in the game world
+        this.items = game.add.physicsGroup();
+        
         // create key
         this.items = game.add.physicsGroup();
         this.map.createFromObjects('collectables', 'key', 'tileset', 4, true, false, this.items);
